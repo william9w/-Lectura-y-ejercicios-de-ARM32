@@ -18,6 +18,8 @@
 # MC. René Solis Reyes
 # Semestre sep - ene 2020
 
+
+-----
 # Características generales de la arquitectura ARM
 
 
