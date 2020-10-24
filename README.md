@@ -39,14 +39,14 @@
 
 #### Para traducirlo a lenguaje máquina hay que utilizar un programa traductor. Éste genera un fichero con la traducción de dicho programa, pero todavía no es un programa ejecutable. Un fichero ejecutable contiene el programa traducido más una serie de códigos que debe tener todo programa que vaya a ser ejecutado en una máquina determinada. El encargado de unir el código del programa con el código de estas librerías es un programa llamado montador que genera el programa ejecutable.
 
-### Durante el proceso de creación de un programa se suelen producir errores. Los errores sintácticos son, por ejemplo, escribir mal una instrucción o hacer una operación entre dos tipos de datos incompatibles. Estos errores son detectados por el traductor y se deben solucionar para poder generar un ejecutable. Una vez que se tiene un programa sintácticamente correcto lo podemos ejecutar, pero esto no implica que el programa sea correcto.
+#### Durante el proceso de creación de un programa se suelen producir errores. Los errores sintácticos son, por ejemplo, escribir mal una instrucción o hacer una operación entre dos tipos de datos incompatibles. Estos errores son detectados por el traductor y se deben solucionar para poder generar un ejecutable. Una vez que se tiene un programa sintácticamente correcto lo podemos ejecutar, pero esto no implica que el programa sea correcto.
 
-### Todas las instrucciones pueden ser correctas, pero se puede haber olvidado poner la condición de salida de un bucle o que sencillamente el programa no haga lo que queremos. Estos errores sólo se pueden detectar en tiempo de ejecución. El depurador nos permite ejecutar el programa instrucción a instrucción y ver todos los valores que se van a calcular, de manera que podemos encontrar los errores.
+#### Todas las instrucciones pueden ser correctas, pero se puede haber olvidado poner la condición de salida de un bucle o que sencillamente el programa no haga lo que queremos. Estos errores sólo se pueden detectar en tiempo de ejecución. El depurador nos permite ejecutar el programa instrucción a instrucción y ver todos los valores que se van a calcular, de manera que podemos encontrar los errores.
 
 ![](imagenes/Entorno.PNG)
 
 
-
-
+![](https://images.cooltext.com/5474910.png)
+<a href="http://cooltext.com" target="_top"><img src="https://cooltext.com/images/ct_pixel.gif" width="80" height="15" alt="Cool Text: Logo and Graphics Generator" border="0" /></a>
 
 
