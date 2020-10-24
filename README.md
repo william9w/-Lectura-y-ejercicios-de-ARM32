@@ -69,3 +69,17 @@ mov r1, r3, ASR #3 /* r1 <- (r3/8) */
 
 ## Tipos de datos
 ![](imagenes/Datos.PNG)
+
+#### Punteros. Un puntero siempre ocupa 32 bits y contiene una dirección de memoria. En ensamblador no tienen tanta utilidad como en C, ya que disponemos de registros de sobra y es más costoso acceder a las variables a través de los punteros que directamente. En este ejemplo acceder a la dirección de var1 nos cuesta 2 ldrs a través del puntero, mientras que directamente se puede hacer con uno sólo.
+
+```s
+.data
+var1 : .word 3
+puntero_var1 : .word var1
+.text
+.global main
+main : ldr r0, = puntero_var1
+ldr r1, [ r0 ]
+ldr r2, [ r1 ]
+ldr r3, 
+```
