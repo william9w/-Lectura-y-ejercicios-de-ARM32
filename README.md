@@ -74,12 +74,15 @@ mov r1, r3, ASR #3 /* r1 <- (r3/8) */
 
 ```s
 .data
-var1 : .word 3
-puntero_var1 : .word var1
+var1 :                .word 3
+puntero_var1 :        .word var1
 .text
-.global main
-main : ldr r0, = puntero_var1
-ldr r1, [ r0 ]
-ldr r2, [ r1 ]
-ldr r3, 
+.global  main
+main :   ldr          r0, = puntero_var1
+         ldr          r1, [ r0 ]
+         ldr          r2, [ r1 ]
+         ldr          r3, = var1
+         bx           lr
+
 ```
+
