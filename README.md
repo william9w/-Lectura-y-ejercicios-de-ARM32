@@ -54,6 +54,11 @@
 
 #### En la arquitectura ARM los accesos a memoria se hacen mediante instrucciones específicas ldr y El resto de instrucciones toman operandos desde registros o valores inmediatos, sin excepciones. En este caso la arquitectura nos fuerza a que trabajemos de un modo determinado: primero cargamos los registros desde memoria, luego procesamos el valor de estos registros con el amplio abanico de instrucciones del ARM, para finalmente volcar los resultados desde registros a memoria. Normalmente se opta por direccionamiento a memoria en instrucciones de procesado en arquitecturas con un número reducido de registros, donde se emplea la memoria como almacén temporal.
 
+### Direccionamiento inmediato.
+```s
+   mov r0, # 1
+   add r2, r3, #4
+```
 
 ### Direccionamiento inmediato con desplazamiento o rotación.
 ```s
@@ -61,3 +66,6 @@ mov r1, r2, LSL #1 /* r1 <- (r2*2) */
 mov r1, r2, LSL #2 /* r1 <- (r2*4) */
 mov r1, r3, ASR #3 /* r1 <- (r3/8) */
 ```
+
+## Tipos de datos
+![](imagenes/Datos.PNG)
