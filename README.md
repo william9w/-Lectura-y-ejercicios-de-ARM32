@@ -85,4 +85,67 @@ main :   ldr          r0, = puntero_var1
          bx           lr
 
 ```
+##  Vectores 
+
+#### Todos los elementos de un vector se almacenan en un único bloque de memoria a partir de una dirección determinada. Los diferentes elementos se almacenan en posiciones consecutivas, de manera que el elemento i está entre los i-1 e i+1. Los vectores están definidos siempre a partir de la posición 0. El propio índice indica cuántos elementos hemos de desplazarnos respecto del comienzo del primer elemento (para acceder al elemento cero hemos de saltarnos 0 elementos, para acceder al elemento 1 hemos de saltarnos un elemento, etc.
+
+## Matrices bidimensionales.
+
+#### Una matriz bidimensional de N×M elementos se almacena en un único bloque de memoria. Interpretaremos una matriz de N×M como una matriz con N filas de M elementos cada una. Si cada elemento de la matriz ocupa B bytes, la matriz ocupará un bloque de M ×N ×B bytes.
+
+## Instrucciones de salto
+#### Las instrucciones de salto pueden producir saltos incondicionales (b y bx) o saltos condicionales. Cuando saltamos a una etiqueta empleamos b, mientras que si queremos saltar a un registro lo hacemos con bx. La variante de registro bx la solemos usar como instrucción de retorno de subrutina, raramente tiene otros usos.
+
+
+##  Ejercicios
+
+#### Push y pop
+```s
+main :   mov  r1, # 1
+         mov  r2, # 2
+         bl nivel1
+         mov  r5, # 5 /* Siguiente instrucci ón */
+       ...
+nivel1 : push { lr }
+         mov r3, # 3
+         bl nivel2
+         pop { lr }
+         bx lr
+nivel2 : mov r4, #4
+        bx lr
+        
+```
+
+## Estructuras de control de alto nivel
+
+#### En este punto veremos cómo se traducen a ensamblador las estructuras de control de alto nivel que definen un bucle (for, while, . . . ), así como las condicionales (if-else). Para programar en ensamblador estas estructuras se utilizan instrucciones de salto condicional. Previo a la instrucción de salto es necesario evaluar la condición del bucle o de la sentencia if, mediante instrucciones aritméticas o lógicas, con el fin de actualizar los flags de estado.
+
+## Compilación a ensamblador
+
+####  En el caso de gcc este proceso se hace en dos fases: en una primera se pasa de C a ensamblador, y en una segunda de ensambladador a código compilado (código máquina). Lo interesante es que podemos interrumpir justo después de la compilación y ver con un editor el aspecto que tiene el código ensamblador generado a partir del código fuente en C.
+
+```c
+# include < stdio .h >
+ void main ( void ){
+ int i;
+ for ( i= 0; i <5; i ++ ){
+printf ( " %d\n " , i );
+ }
+}
+```
+```s
+.data
+var1 : .asciz " %d\ 012 "
+.text
+.global main
+main : push { r4, lr }
+mov r4, # 0
+.L2 : mov r1, r4
+ldr r0, = var1
+add r4, r4, # 1
+bl printf
+cmp r4, # 5
+bne .L2
+pop { r4, pc }
+```
 
